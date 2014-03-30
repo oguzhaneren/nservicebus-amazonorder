@@ -1,0 +1,148 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E7B4F089-4ED7-4207-8214-A4B5CCBFA627}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AmazonOrder.BillingBE</RootNamespace>
+    <AssemblyName>AmazonOrder.BillingBE</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="NServiceBus">
+      <HintPath>..\packages\NServiceBus.Interfaces.4.4.2\lib\net40\NServiceBus.dll</HintPath>
+    </Reference>
+    <Reference Include="NServiceBus.Core">
+      <HintPath>..\packages\NServiceBus.4.4.2\lib\net40\NServiceBus.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="NServiceBus.Host">
+      <HintPath>..\packages\NServiceBus.Host.4.4.2\lib\net40\NServiceBus.Host.exe</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="Microsoft.CSharp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\AmazonOrder.Code\Billing\OrderAcceptedProcessor.cs">
+      <Link>Billing\OrderAcceptedProcessor.cs</Link>
+    </Compile>
+    <Compile Include="..\AmazonOrder.Code\Infrastructure\Billing\OrderAcceptedProcessor.cs">
+      <Link>Infrastructure\OrderAcceptedProcessor.cs</Link>
+    </Compile>
+    <Compile Include="EndpointConfig.cs">
+      <SourceModelReference>modelbus://NuPattern.Runtime.Store/AmazonOrder/Element/O:\Google Drive\dev\workspace\dotnet\nservicebus\AmazonOrder\AmazonOrder.slnbldr%252fd8ccf526-b4ce-46d6-b459-b85fc19892b8</SourceModelReference>
+      <ItemGuid>1a6a2851-8a87-433b-ae87-1972bdfcf3b9</ItemGuid>
+    </Compile>
+    <Compile Include="EndpointConfig.generated.cs">
+      <DependentUpon>EndpointConfig.cs</DependentUpon>
+      <SourceModelReference>modelbus://NuPattern.Runtime.Store/AmazonOrder/Element/O:\Google Drive\dev\workspace\dotnet\nservicebus\AmazonOrder\AmazonOrder.slnbldr%252fd8ccf526-b4ce-46d6-b459-b85fc19892b8</SourceModelReference>
+      <ItemGuid>15e138f9-6a7b-430f-81c2-54226c35cebe</ItemGuid>
+    </Compile>
+    <Compile Include="Infrastructure\MessageConventions.cs">
+      <SourceModelReference>modelbus://NuPattern.Runtime.Store/AmazonOrder/Element/O:\Google Drive\dev\workspace\dotnet\nservicebus\AmazonOrder\AmazonOrder.slnbldr%252fd8ccf526-b4ce-46d6-b459-b85fc19892b8</SourceModelReference>
+      <ItemGuid>204c1726-d72d-4e8d-a7ae-c96085c958c0</ItemGuid>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Infrastructure\INServiceBusComponent.cs" />
+    <Compile Include="TransportConfig.cs">
+      <SourceModelReference>modelbus://NuPattern.Runtime.Store/AmazonOrder/Element/O:\Google Drive\dev\workspace\dotnet\nservicebus\AmazonOrder\AmazonOrder.slnbldr%252fd8ccf526-b4ce-46d6-b459-b85fc19892b8</SourceModelReference>
+      <ItemGuid>2b559dd1-03cb-45c2-ab19-23bd6988b648</ItemGuid>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SourceModelReference>modelbus://NuPattern.Runtime.Store/AmazonOrder/Element/O:\Google Drive\dev\workspace\dotnet\nservicebus\AmazonOrder\AmazonOrder.slnbldr%252fd8ccf526-b4ce-46d6-b459-b85fc19892b8</SourceModelReference>
+      <ItemGuid>1961a558-f283-4d8c-bcc8-4f783587cf0d</ItemGuid>
+    </None>
+    <Content Include="Infrastructure\Logging.config">
+      <SourceModelReference>modelbus://NuPattern.Runtime.Store/AmazonOrder/Element/O:\Google Drive\dev\workspace\dotnet\nservicebus\AmazonOrder\AmazonOrder.slnbldr%252fd8ccf526-b4ce-46d6-b459-b85fc19892b8</SourceModelReference>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <ItemGuid>87863f01-2981-41e0-bfc2-1b095ac7bef7</ItemGuid>
+    </Content>
+    <Content Include="Infrastructure\GeneratedCode\Config\MasterNodeConfig.config">
+      <SourceModelReference>modelbus://NuPattern.Runtime.Store/AmazonOrder/Element/O:\Google Drive\dev\workspace\dotnet\nservicebus\AmazonOrder\AmazonOrder.slnbldr%252fd8ccf526-b4ce-46d6-b459-b85fc19892b8</SourceModelReference>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <ItemGuid>e3ab5760-01f2-4dfc-ab13-e8c0edd0fe29</ItemGuid>
+    </Content>
+    <Content Include="Infrastructure\GeneratedCode\Config\MessageForwardingInCaseOfFaultConfig.config">
+      <SourceModelReference>modelbus://NuPattern.Runtime.Store/AmazonOrder/Element/O:\Google Drive\dev\workspace\dotnet\nservicebus\AmazonOrder\AmazonOrder.slnbldr%252fd8ccf526-b4ce-46d6-b459-b85fc19892b8</SourceModelReference>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <ItemGuid>4a47eff0-976a-4abf-994a-dc5481b7ad91</ItemGuid>
+    </Content>
+    <Content Include="Infrastructure\GeneratedCode\Config\TransportConfig.config">
+      <SourceModelReference>modelbus://NuPattern.Runtime.Store/AmazonOrder/Element/O:\Google Drive\dev\workspace\dotnet\nservicebus\AmazonOrder\AmazonOrder.slnbldr%252fd8ccf526-b4ce-46d6-b459-b85fc19892b8</SourceModelReference>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <ItemGuid>8e652c8b-292f-40d9-872b-c27b7b017590</ItemGuid>
+    </Content>
+    <Content Include="Infrastructure\GeneratedCode\Config\UnicastBusConfig.config">
+      <SourceModelReference>modelbus://NuPattern.Runtime.Store/AmazonOrder/Element/O:\Google Drive\dev\workspace\dotnet\nservicebus\AmazonOrder\AmazonOrder.slnbldr%252fd8ccf526-b4ce-46d6-b459-b85fc19892b8</SourceModelReference>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <ItemGuid>4c6a5657-44b3-47d6-ad95-0261c3f76226</ItemGuid>
+    </Content>
+    <Content Include="Infrastructure\GeneratedCode\Config\TransportConnectionString.config">
+      <SourceModelReference>modelbus://NuPattern.Runtime.Store/AmazonOrder/Element/O:\Google Drive\dev\workspace\dotnet\nservicebus\AmazonOrder\AmazonOrder.slnbldr%252fd8ccf526-b4ce-46d6-b459-b85fc19892b8</SourceModelReference>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <ItemGuid>df917e68-54c1-4b3c-a367-3e95018703b4</ItemGuid>
+    </Content>
+    <Content Include="Infrastructure\GeneratedCode\Config\SecondLevelRetriesConfig.config">
+      <SourceModelReference>modelbus://NuPattern.Runtime.Store/AmazonOrder/Element/O:\Google Drive\dev\workspace\dotnet\nservicebus\AmazonOrder\AmazonOrder.slnbldr%252fd8ccf526-b4ce-46d6-b459-b85fc19892b8</SourceModelReference>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <ItemGuid>551885ca-0fcc-496a-8e0a-8ae4b10fc5f0</ItemGuid>
+    </Content>
+    <Content Include="Infrastructure\GeneratedCode\Config\AuditConfig.config">
+      <SourceModelReference>modelbus://NuPattern.Runtime.Store/AmazonOrder/Element/O:\Google Drive\dev\workspace\dotnet\nservicebus\AmazonOrder\AmazonOrder.slnbldr%252fd8ccf526-b4ce-46d6-b459-b85fc19892b8</SourceModelReference>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <ItemGuid>af391d11-1bb5-41c9-9139-ece85afb4b89</ItemGuid>
+    </Content>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AmazonOrder.Contracts\AmazonOrder.Contracts.csproj">
+      <Project>{8B96FA31-D962-406B-AC2D-9AB203F1B5BB}</Project>
+      <Name>AmazonOrder.Contracts</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <StartAction>Program</StartAction>
+    <StartProgram>$(ProjectDir)$(OutputPath)NServiceBus.Host.exe</StartProgram>
+  </PropertyGroup>
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
